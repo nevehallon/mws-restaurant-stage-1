@@ -1,7 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-body,
 td,
 th,
 p {
@@ -9,12 +8,6 @@ p {
   font-size: 10pt;
   color: #333;
   line-height: 1.5;
-}
-
-body {
-  background-color: #fdfdfd;
-  margin: 0;
-  position: relative;
 }
 
 ul,
@@ -61,22 +54,6 @@ hgroup,
 menu,
 nav,
 section {
-  display: block;
-}
-
-#maincontent {
-  background-color: #f3f3f3;
-  min-height: 100%;
-}
-
-#footer {
-  background-color: #444;
-  color: #aaa;
-  font-size: 8pt;
-  letter-spacing: 1px;
-  padding: 25px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 /* ====================== Navigation ====================== */
@@ -139,11 +116,11 @@ nav h1 a {
 
 /* ====================== Map ====================== */
 
-#map {
+/* #map {
   height: 400px;
   width: 100%;
   background-color: #ccc;
-}
+} */
 
 /* ====================== Restaurant Filtering ====================== */
 
@@ -233,35 +210,34 @@ nav h1 a {
   text-transform: uppercase;
 }
 
-/* ====================== Restaurant Details ====================== */
+/* ====================== Restaurant Details ====================== 
 
-.inside header {
+header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
 }
 
-.inside #map-container {
+*/
+
+#map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
-  right: 0;
-  top: 80px;
-  width: 50%;
+  height: 100%;
+  width: 100%;
 }
 
-.inside #map {
+#map {
   background-color: #ccc;
   height: 100%;
   width: 100%;
 }
 
-.inside #footer {
+/* #footer {
   bottom: 0;
   position: absolute;
-  width: 50%;
-}
+  width: 100%;
+} */
 
 #restaurant-name {
   color: #f18200;
@@ -339,4 +315,39 @@ nav h1 a {
 
 #restaurant-hours td {
   color: #666;
+}
+
+/*css-grid-responsive-layout*/
+body,
+.inside {
+  display: unset;
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-templatee-rows: auto;
+}
+
+#maincontent {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 0.27fr 1fr;
+  background-color: #f3f3f3;
+  min-height: 100%;
+  position: relative;
+
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #444;
+  color: #aaa;
+  letter-spacing: 1px;
+  padding: 25px;
+  text-align: center;
+  text-transform: uppercase;
 }
