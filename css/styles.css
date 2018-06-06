@@ -230,6 +230,7 @@ header {
 */
 
 #map-container {
+  
   z-index: 1;
   position: fixed;
   top: 80px;
