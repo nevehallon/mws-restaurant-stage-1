@@ -53,8 +53,7 @@ header,
 hgroup,
 menu,
 nav,
-section {
-}
+section {}
 
 /* ====================== Navigation ====================== */
 
@@ -137,12 +136,32 @@ nav h1 a {
   border: 1px solid black;
 }
 
+.small-filter {
+  animation: myframes 1s ease-in-out 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes myframes {
+  0% {
+    opacity: 1;
+    width: 100%;
+    right: unset;
+    top: unset;
+  }
+  100% {
+    opacity: 0.4;
+    width: 20%; 
+    right: 0;
+    top: 87px;
+  }
+}
+
 .filter-options h2 {
   color: white;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1;
-  margin: 0 20px ;
+  margin: 0 20px;
 }
 
 .filter-options select {
@@ -230,13 +249,38 @@ header {
 */
 
 #map-container {
-  
   z-index: 1;
   position: fixed;
   top: 80px;
   background: blue none repeat scroll 0 0;
   height: 38%;
   width: 100%;
+}
+
+/* map class for mini-map on scroll */
+
+.small {
+  opacity: 0.4;
+  animation: smallframes 1s ease-in-out 0s;
+  animation-fill-mode: forwards;
+}
+
+.small:hover {
+  animation: smallframes 1s ease-in-out 0s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes smallframes {
+  from {
+    opacity: 1;
+    width: 100%;
+    height: 38%;
+  }
+  to {
+    opacity: 0.4;
+    width: 20%;
+    height: 20%;
+  }
 }
 
 #map {
@@ -299,7 +343,7 @@ header {
   letter-spacing: -1px;
 }
 
-#reviews-container > h2 {
+#reviews-container>h2 {
   position: relative;
   align-self: end;
 }
@@ -338,6 +382,7 @@ header {
 }
 
 /*css-grid-responsive-layout*/
+
 body,
 .inside {
   display: unset;
