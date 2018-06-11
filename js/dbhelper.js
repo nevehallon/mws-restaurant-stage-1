@@ -164,6 +164,7 @@ class DBHelper {
       map: map,
       animation: google.maps.Animation.DROP}
     );
+    marker.alt = restaurant.name;
     return marker;
   }
 
