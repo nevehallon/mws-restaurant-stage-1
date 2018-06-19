@@ -19,13 +19,13 @@ function setAttr() {
 
 
     for (let j = 0; j <= $('img').length; j++) {
-        if (j <= 8) {
+        if (j <= 9) {
             $('img')[j].alt = "marker";
-        } else if (j <= 21) {
+        } else if (j <= 21 && j > 9) {
             $('img')[j].alt = "map";
         } else if (j == 32) {
             $('img')[j].alt = "google logo";
-        } else if (j > 32 && j <= 40) {
+        } else if (j > 32 && j <= 41 || j == 30 || j == 31) {
             $('img')[j].alt = "accessibility icons";
         }
     }
