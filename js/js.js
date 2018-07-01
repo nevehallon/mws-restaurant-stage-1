@@ -25,6 +25,7 @@ function setAttr() {
             $('img')[j].alt = "map";
         } else if (j == 32) {
             $('img')[j].alt = "google logo";
+            $('img')[j].title = "fullscreen-controls";
         } else if (j > 32 && j <= 41 || j == 30 || j == 31) {
             $('img')[j].alt = "accessibility icons";
         }
