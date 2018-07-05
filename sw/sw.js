@@ -1,9 +1,9 @@
-let staticCacheName = 'rr-static-v1';
+let cacheTitle = 'rr-stored';
 
 /* Cache static assets on install */ 
 self.addEventListener('install', event => {
 	event.waitUntil(
-		caches.open(staticCacheName).then( cache => {
+		caches.open(cacheTitle).then( cache => {
 			return cache.addAll([
 				'/',
 				'/index.html',
@@ -35,8 +35,8 @@ self.addEventListener('activate', event => {
 		caches.keys().then( cacheNames => {
 			return Promise.all(
 				cacheNames.filter( cacheName => {
-					return cacheName.startsWith('rr-') &&
-					cacheName != staticCacheName;
+					return cacheName.startsWith('rr-stored') &&
+					cacheName != cacheTitle;
 				}).map( cacheName => {
 					return caches.delete( cacheName );
 				})
