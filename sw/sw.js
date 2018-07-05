@@ -11,6 +11,7 @@ self.addEventListener('install', event => {
 				'/data/restaurants.json',
 				'/js/dbhelper.js',
 				'/js/main.js',
+				'/js/js.js',
 				'/js/restaurant_info.js',
 				'/css/styles.css',
 				'/img/1.jpg',
