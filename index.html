@@ -12,26 +12,26 @@
 
 <body>
   <div class="container">
-    <header class="item">
-      <nav>
+    <header role="banner" class="item" aria-label="header">
+      <nav role="banner" aria-label="banner">
         <h1>
-          <a href="/">Restaurant Reviews</a>
+          <a tabindex="1" id="title" href="/">Restaurant Reviews</a>
         </h1>
       </nav>
     </header>
 
-    <main class="item" id="maincontent">
-      <section id="map-container">
-        <div id="map"></div>
-      </section>
-      <section class="filter-results">
+    <main class="item" role="main" id="maincontent" aria-label="maincontent">
+      <section id="map-container" role="region" aria-label="map-container">
+        <div tabindex="2" id="map"></div>
+      </section>  
+      <section class="filter-results" role="region" aria-label="filter-results">
         <div class="filter-options">
-          <h2>Filter Results</h2>
+          <h2 class="h3">Filter Results</h2>
           <select id="neighborhoods-select" name="neighborhoods" title="neighborhoods" onchange="updateRestaurants()">
-            <option value="all">All Neighborhoods</option>
+            <option tabindex="3" value="all">All Neighborhoods</option>
           </select>
           <select id="cuisines-select" name="cuisines" title="cuisines" onchange="updateRestaurants()">
-            <option value="all">All Cuisines</option>
+            <option tabindex="4" value="all">All Cuisines</option>
           </select>
         </div>
         <ul id="restaurants-list"></ul>
@@ -41,10 +41,10 @@
     <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
     <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEsy-cxIYPrP_2a01SIhrFPf_1OCCM3VM&libraries=places&callback=initMap"></script>
-    <script type="application/javascript" charset="utf-8" src="js/js.js"></script>
+    <script type="application/javascript" charset="utf-8" src="sw/js.js"></script>
 
-
-    <footer class="item" id="footer">
+    
+    <footer role="contentinfo" class="item" id="footer" aria-label="footer">
       Copyright (c) 2017
       <a href="/">
         <strong>Restaurant Reviews</strong>

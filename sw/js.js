@@ -3,7 +3,8 @@ let list = $('.filter-options');
 let air = $('area');
 let print = $('.gmnoprint > img');
 let imgs = $('img');
-
+let restlist = $('#restaurants-list>li');
+ 
 $(window).scroll(() => {
     mapped.addClass("small");
     list.addClass("small-filter");
@@ -11,6 +12,10 @@ $(window).scroll(() => {
 
 function setAttr() {
     $('iframe')[0].title = "map";
+
+    for (k=0; k<$('#restaurants-list>li').length; k++) {
+        $('#restaurants-list>li>a')[k]['aria-label'] = $('#restaurants-list>li>h1')[k]['innerHTML'];
+    }
 
     for (let i = 0; i < $('area').length; i++) {
         $('area')[i].alt = $('area')[i].title;
@@ -27,7 +32,7 @@ function setAttr() {
             $('img')[j].alt = "google logo";
             $('img')[j].title = "fullscreen-controls";
         } else if (j > 32 && j <= 41 || j == 30 || j == 31) {
-            $('img')[j].alt = "accessibility icons";
+            $('img')[j].alt = "accessibility-icons";
         }
     }
 }
@@ -35,3 +40,15 @@ function setAttr() {
 setTimeout(() => {
     setAttr();
 }, 1000);
+
+if ('serviceWorker' in navigator) {
+    // Register a service worker hosted at the root of the
+    // site using the default scope.
+    navigator.serviceWorker.register('/sw/sw.js').then(function(registration) {
+      console.log('Service worker registration succeeded:', registration);
+    }).catch(function(error) {
+      console.log('Service worker registration failed:', error);
+    });
+  } else {
+    console.log('Service workers are not supported.');
+  }
