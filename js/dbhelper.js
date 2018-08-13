@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
    /*  const port = 5500 */ // Change this to your server port
-    return `https://nevehallon.github.io/mws-restaurant-stage-1/`;
+    return `https://nevehallon.github.io/mws-restaurant-stage-1/data/restaurants.json`;
   }
 
   /**
